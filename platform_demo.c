@@ -17,15 +17,19 @@ int32_t platform_init(void)
     int32_t status = ERR_SUCCESS;
     info_log(DEBUG_PLATFORM, ("Platform init\n"));
 
+#ifndef NO_NVM
     /** NVP Initialization */
     status = platform_nvm_init();
     if (status != ERR_SUCCESS)
         return status;
-
+#endif
+    
+#ifndef NO_DISPLAY
     status = display_init();
     if (status != ERR_SUCCESS)
         return status;
-
+#endif
+    
     info_log(DEBUG_PLATFORM, ("Platform initialized\n"));
     
     return ERR_SUCCESS;
