@@ -138,7 +138,7 @@ int32_t platform_nvm_init(void)
     status = system_mutex_create(&nvm_lock_mutex);
     if (status != ERR_SUCCESS) {
         error_log(DEBUG_PLATFORM, ("Mutex can not be created\n"), status);
-        system_mutex_destroy(nvm_lock_mutex);
+        system_mutex_destroy(nvm_event_mutex);
         return status;
     }
 
