@@ -5,6 +5,8 @@
  *      Author: zoltanr
  */
 
+#ifndef NO_DISPLAY
+
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
@@ -128,3 +130,4 @@ int32_t display_print_remote_msg(const char* msg) {
     return ERR_SUCCESS;
 }
 
+#endif
